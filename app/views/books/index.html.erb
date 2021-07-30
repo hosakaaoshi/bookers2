@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+   <div class="books-index">
+    <header class="head-books-index">
+    <nav class="head-books-index-2">
+    <%= link_to "Bookers", root_path %>
+   </nav>
+   </header>
+
+<body>
+<div class="books-index-item">
+  <sidebare>
+    <div class="side-books-index">
+<%= render 'books/info', books: @books %>
+<%= render 'books/new', book: @book %>
+    </div>
+</sidebare>
+
+<div class="main-books-index">
+<%= form_with model: @book, local:true do |f| %>
+<table class="table">
+<h4>Books</h4>
+<% @books.each do |book| %>
+<thead>
+  <tr>
+  <th><%= link_to user_path(book.user) do %></th>
+  <th><%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></th>
+  <th><%= book.user.name %></th>
+  <% end %>
+  <%= link_to book_path(book) do %>
+  <th><%= book.title %></th>
+  <% end %>
+  <th><%= book.body %></th>
+  </tr>
+</thead>
+<% end %>
+</table>
+</div>
+</div>
+<% end %>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

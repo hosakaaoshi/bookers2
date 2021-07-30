@@ -1,0 +1,21 @@
+<div class="books-edit">
+<h4>Editing Book</h4>
+<%= form_with model:@book, local:true do |f| %>
+  <div class="edit-title">
+  <p>Title</p>
+  <%= f.text_area :title %>
+  </div>
+  <div class="edit-body">
+  <p>Opinion</p>
+  <%= f.text_area :body %>
+  </div>
+  <div class="edit-enter">
+  <%= f.submit 'Create Book' %>
+  </div>
+  <% end %>
+
+  <div class="edit-nav">
+  <%= link_to 'Show', book_path(current_user) %>
+  <%= link_to 'Back', books_path %>
+  </div>
+</div>  
