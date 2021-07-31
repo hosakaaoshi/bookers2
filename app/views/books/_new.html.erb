@@ -1,9 +1,6 @@
-<div class="containar">
-<div class="row no-gutters">
-<div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-<div class="form-body p-4">
+
   <% if @book.errors.any? %>
-    <%= @book.errors.count %>件のエラーが発生しました
+    <%= @book.errors.count %>errors
     <% @book.errors.full_messages.each do |message| %>
       <%= message %>
       <% end %>
@@ -11,17 +8,13 @@
 <%= form_with model: book, local:true do |f| %>
 <div class="title">
   <p>Title</p>
-  <%= f.text_area :title %>
+  <%= f.text_field :title %>
 </div>
 <div class="body">
   <p>Opinion</p>
   <%= f.text_area :body %>
 </div>
 <div class="enter">
-  <%= f.submit 'Create Book' %>
+  <%= f.submit 'Create Book', class: "btn btn-secondary"  %>
 </div>
   <% end %>
-</div>
-</div>
-</div>
-</div>

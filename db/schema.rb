@@ -23,15 +23,6 @@ ActiveRecord::Schema.define(version: 2021_07_28_083403) do
     t.text "body"
   end
 
-  create_table "post_images", force: :cascade do |t|
-    t.text "shop_name"
-    t.string "image_id"
-    t.text "caption"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

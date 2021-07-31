@@ -4,35 +4,25 @@
   <%= message %>
   <% end %>
 <% end %>
-<div class="users-show"
-<header class="head-users-show">
-  <nav class="head-users-show2">
-     <%= link_to "Books", root_path %>
-  </nav>
-</header>
-
- <div class="container">
- <div class="row"> 
+ <div class="row">
    <div class="col-lg-4">
     <%= render 'books/info', users: @users %>
     <%= render 'books/new', book: @book %>
    </div>
 
-   <div class="col-lg-8"> 
+   <div class="col-lg-8">
       <h4>Books</h4>
      <table>
-     <tr>
      <% @books.each do |book| %>
-     <% link_to books_path(current_user) do %>
-     <th><%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></th>
-     <th><%= book.user.name %></th>
-     <% end %>
-     <th><p><%= book.title %></p></th>
-     <th><P><%= book.body %></p></th>
+     <tr>
+       <% link_to books_path(current_user) do %>
+         <th><%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></th>
+         <th><%= book.user.name %></th>
+       <% end %>
+       <th><p><%= book.title %></p></th>
+       <th><P><%= book.body %></p></th>
      </tr>
+     <% end %>
      </table>
      </div>
      </div>
-        <% end %>
-   </div>
-</div>
