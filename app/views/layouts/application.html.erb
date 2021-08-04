@@ -38,9 +38,11 @@
         </il>
       <% else %>
         <li>
+          <i class="fas fa-sign-in-alt"></i>
           <%= link_to "Log in", new_user_session_path %>
         </li>
         <li>
+          <i class="fas fa-user-plus"></i>
           <%= link_to "Sign Up", new_user_registration_path %>
         </li>
       <% end %>
@@ -48,8 +50,18 @@
         </div>
       </div>
     </nav>
-</header>
-  <div class="container">
-    <%= yield %>
-　</div>
+  </header>
+    <div class="container">
+      <%= yield %>
+  　</div>
+  　<footer>
+      <div claas="container mt-5">
+        <div claas="row">
+          <div claas="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

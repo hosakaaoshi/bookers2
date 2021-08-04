@@ -1,12 +1,19 @@
-<div class="top">
-<h1>welcom to Bookers!!</h1>
-<p>in bookers,</p>
-<br />
-<p>you can share and exhange your opinions , inpressions , and emotions</p>
-<br />
-<p>about various books</p>
-<div class="top-nav">
- <%= link_to "Log in", new_user_session_path %>
- <%= link_to "Sign Up", new_user_registration_path %>
-</div>
-</div>
+<div claas="container">
+ <div class="row">
+  <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+    <h1>welcom to
+    <i class="fas fa-book"></i>
+    Bookers!!</h1>
+    <p>in
+    <i class="fas fa-book"></i>
+    Bookers,</p>
+    <div claas="btn-wrapper col-10 mx-auto">
+    <div claas="row">
+     <%= link_to "Log in", new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+    </div>
+
+    <div claas="row">
+     <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
+    </div>
+  </div>
+ </div>
