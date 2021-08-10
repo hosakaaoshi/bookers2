@@ -9,19 +9,19 @@
      <div class="row">
         <div class="col-lg-4">
        <%= render 'books/info', books: @books %>
-       <%= render 'books/new', book: @book %>
+       <%= render 'books/new', book: @book, new_book:@new_book %>
        </div>
 
         <div class="col-lg-8">
        <h4>Book detail</h4>
        <table class="table table-striped">
         <tr>
-       <th><p><%= link_to attachment_image_tag(@book.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40'), user_path(@book.user.id) %></p>
-       <p><%= link_to @book.user.name, user_path(@book.user) %></p></th>
-       <th><%= link_to @book.title, user_path(@book.user) %></th>
+       <th><p><%= link_to attachment_image_tag(@user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40'), user_path(@book.user.id) %></p>
+       <p><%= link_to @book.user.name, user_path(@book.user_id) %></p></th>
+       <th><%= link_to @book.title, user_path(@book.user_id) %></th>
        <th><%= @book.body %></th>
-       <th><%= link_to 'Edit',edit_book_path(@book.user) %></th>
-       <th><%= link_to 'Derete',book_path(@book), method: :delete %></th>
+       <th><%= link_to 'Edit',edit_book_path(@book) %></th>
+       <th><%= link_to 'Destroy',book_path(@book), method: :delete %></th>
         </tr>
        </table>
        </div>

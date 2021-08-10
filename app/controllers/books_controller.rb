@@ -1,25 +1,25 @@
 class BooksController < ApplicationController
 
   def create
-    @book = Book.new(book_params)
-    @book.user_id = current_user.id
-    @book.save
-    redirect_to book_path(book.user)
+    @new_book = Book.new(book_params)
+    @new_book.user_id = current_user.id
+    @new_book.save
+    redirect_to book_path(@new_book)
   end
 
   def index
     @books = Book.all
-    @book = Book.new
-    redirect_to book_path(book.user)
+    @new_book = Book.new
   end
 
   def show
     @book = Book.find(params[:id])
+    @user = @book.user
+    @new_book = Book.new
   end
 
   def edit
     @book = Book.new
-    redirect_to user_path
   end
 
   def update
