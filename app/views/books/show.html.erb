@@ -20,8 +20,10 @@
        <p><%= link_to @book.user.name, user_path(@book.user_id) %></p></th>
        <th><%= link_to @book.title, user_path(@book.user_id) %></th>
        <th><%= @book.body %></th>
+       <% if @book.user == current_user %>
        <th><%= link_to 'Edit',edit_book_path(@book) %></th>
        <th><%= link_to 'Destroy',book_path(@book), method: :delete %></th>
+       <% end %>
         </tr>
        </table>
        </div>
