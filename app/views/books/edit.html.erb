@@ -1,21 +1,19 @@
-<div class="books-edit">
-<h4>Editing Book</h4>
-<%= form_with model:@new_book, local:true do |f| %>
-  <div class="edit-title">
-  <p>Title</p>
-  <%= f.text_area :title %>
-  </div>
-  <div class="edit-body">
-  <p>Opinion</p>
-  <%= f.text_area :body %>
-  </div>
-  <div class="edit-enter">
-  <%= f.submit 'Create Book' %>
-  </div>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+     <h4>Editing Book</h4>
+      <%= form_with model:@book, url:book_path, local:true do |f| %>
+       <h4>Title</h4>
+       <%= f.text_field :title %>
+       <h4>Opinion</h4>
+       <%= f.text_area :body %>
+       <%= f.submit 'Update Book', class:"btn btn-success" %>
+     <% end %>
 
-  <div class="edit-nav">
-  <%= link_to 'Show', book_path(current_user) %>
-  <%= link_to 'Back', books_path %>
-  </div>
+     <div class="edit-nav">
+     <%= link_to 'Show', book_path %>
+     <%= link_to 'Back', books_path %>
+     </div>
+    </div>
+   </div>
 </div>

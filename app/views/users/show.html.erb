@@ -20,9 +20,8 @@
        <tr>
          <%= link_to (book.user) do %>
            <th><%= attachment_image_tag book.user, :profile_image, fallback: "no_image.jpg",size:'40x40',format: 'no_image.jpg' %></th>
-           <th><%= book.user.name %></th>
          <% end %>
-         <th><p><%= book.title %></p></th>
+         <th><p><%= link_to book.title, book_path(book) %></p></th>
          <th><P><%= book.body %></p></th>
        </tr>
        <% end %>
