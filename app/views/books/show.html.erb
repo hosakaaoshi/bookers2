@@ -10,12 +10,12 @@
 </div>
    <div class="container">
      <div class="row">
-        <div class="col-lg-4">
-       <%= render 'books/info', books: @books %>
+        <div class="col-md-3">
+       <%= render 'books/info', user: @user %>
        <%= render 'books/new', book: @book, new_book:@new_book %>
        </div>
 
-        <div class="col-lg-8">
+       <div class="col-md-8 offset-md-1">
        <h4>Book detail</h4>
        <table class="table table-striped">
         <tr>

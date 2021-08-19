@@ -4,12 +4,12 @@
 
  <div class="container">
  <div class="row">
-   <div class="col-lg-4">
+   <div class="col-md-3">
  <%= render 'books/info', user: current_user %>
  <%= render 'books/new', new_book:@new_book %>
    </div>
 
- <div class="col-lg-8">
+   <div class="col-md-8 offset-md-1">
      <h2>Users</h2>
    <table class="table">
    <% @users.each do |user| %>

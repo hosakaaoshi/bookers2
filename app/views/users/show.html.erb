@@ -2,12 +2,12 @@
  <div class="notice">successfully</div>
 </div>
  <div class="row">
-   <div class="col-lg-4">
-    <%= render 'books/info', users: @users %>
+   <div class="col-md-3">
+    <%= render 'books/info', user: @user %>
     <%= render 'books/new', new_book:@new_book %>
    </div>
 
-   <div class="col-lg-8">
+   <div class="col-md-8 offset-md-1">
       <h4>Books</h4>
      <table class="table">
       <thead>
